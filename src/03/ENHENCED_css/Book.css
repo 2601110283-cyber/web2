@@ -1,0 +1,60 @@
+/* Library.css */
+
+/* 배경과 전체 컨테이너 여백 설정 */
+.Library-container {
+    display: grid;
+    /* 화면 크기에 맞춰 카드가 자동으로 줄바꿈되도록 설정 (최소 너비 250px) */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 24px;
+    padding: 40px;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+/* 개별 책 카드 디자인 */
+.book-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 카드에 마우스를 올렸을 때의 호버 효과 */
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 책 표지 이미지 설정 */
+.book-cover {
+    width: 100%;
+    max-width: 160px;
+    height: 230px;
+    object-fit: cover; /* 이미지가 비율을 유지하며 영역을 꽉 채우도록 설정 */
+    border-radius: 4px;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 책 제목 (h1) */
+.book-card h1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #212529;
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+    word-break: keep-all; /* 한글 단어 단위로 줄바꿈 */
+}
+
+/* 총 페이지 수 (h2) */
+.book-card h2 {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #6c757d;
+    margin: 0;
+}
