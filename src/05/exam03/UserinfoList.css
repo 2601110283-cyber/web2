@@ -1,0 +1,40 @@
+/* UserinfoList.css */
+
+.comment {
+    /* 기존 스타일 유지 및 개선 */
+    background-color: #ffffff;
+    border: 1px solid #f0f0f0; /* 테두리를 조금 더 연하고 부드럽게 */
+    border-radius: 12px; /* 모서리를 조금 더 둥글게 (최근 트렌드) */
+    padding: 20px;
+
+    /* 중앙 정렬 및 반응형 너비 설정 */
+    width: 90%; /* 모바일에서는 90% 차지 */
+    max-width: 450px; /* PC에서는 최대 450px까지만 커지도록 제한 */
+    margin: 16px auto; /* 위아래 여백 16px, 좌우 자동(중앙정렬) */
+
+    /* 그림자 및 애니메이션 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease; /* 애니메이션을 부드럽게 */
+}
+
+/* 마우스를 올렸을 때 생기는 효과 (호버) */
+.comment:hover {
+    transform: translateY(-4px); /* 위로 4px 살짝 떠오름 */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08); /* 그림자가 깊어짐 */
+    border-color: #e2e8f0;
+}
+
+.comment-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333333; /* 텍스트를 조금 더 진하게 하여 가독성 확보 */
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.comment-date {
+    font-size: 13px; /* 날짜는 본문보다 작게 (정보의 위계) */
+    color: #a0aec0; /* 부드러운 은회색 */
+    text-align: right;
+    font-weight: 500;
+}

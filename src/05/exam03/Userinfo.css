@@ -1,0 +1,18 @@
+/* Userinfo.css */
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 14px; /* 아바타와 이름 사이 간격을 조금 더 여유롭게 (10px -> 14px) */
+
+    margin-bottom: 14px; /* 본문 텍스트와의 여백 */
+    padding-bottom: 12px; /* 구분선 안쪽 여백 */
+    border-bottom: 1px solid #f0f4f8; /* 프로필과 댓글 내용 사이에 아주 연한 구분선 추가 */
+}
+
+.user-info-name {
+    font-weight: 700; /* bold와 같지만, 폰트 두께를 명확히 지정해 모던한 느낌을 줌 */
+    color: #2c3e50; /* 단순 검은색 대신 세련된 다크 네이비/그레이 톤 적용 */
+    font-size: 17px; /* 댓글 본문(15px)과 자연스럽게 어울리도록 크기 살짝 조정 */
+    letter-spacing: -0.5px; /* 자간을 살짝 좁혀서 글씨가 깔끔하게 뭉쳐 보이도록 설정 */
+}
