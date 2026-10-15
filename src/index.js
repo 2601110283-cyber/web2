@@ -19,13 +19,16 @@ import Notification from "./06/NotificationList";
 //import Accommodate from "./07/02/Accommodate";
 //import Toggle from "./08/Toggle";
 //import MyButton from "./08/MyButton";
-import Toggle2 from "./08/Toggle";
+//import Toggle2 from "./08/Toggle";
+//import MyButton2 from "./08/1/MyButton2";
+//import ConfirmButton from "./08/2/ConfirmButton";
+import Message from "./08/2/Message";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 setInterval(() => {
         root.render(
             <React.StrictMode>
-                <Toggle2/>
+                <Message/>
             </React.StrictMode>
         );
     },1000
