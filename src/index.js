@@ -22,13 +22,19 @@ import Notification from "./06/NotificationList";
 //import Toggle2 from "./08/Toggle";
 //import MyButton2 from "./08/1/MyButton2";
 //import ConfirmButton from "./08/2/ConfirmButton";
-import Message from "./08/2/Message";
+//import Message from "./08/2/Message";
+//import Greeting from "./09/ex1/Greeting";
+//import LoginControl from "./09/ex2/LoginControl";
+//import Mailbox from "./09/ex3/Mailbox";
+//import LoginControl2 from "./09/ex3/LoginControl2";
+//import MainPage from "./09/ex4/MainPage";
+import LandingPage from "./09/finalex/LandingPage";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 setInterval(() => {
         root.render(
             <React.StrictMode>
-                <Message/>
+                <LandingPage/>
             </React.StrictMode>
         );
     },1000

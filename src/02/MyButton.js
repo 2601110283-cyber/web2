@@ -17,3 +17,6 @@ const domContainer = document.querySelector('#root');
 // ReactDOM 객체에 루트요소객체를 생성
 const root = ReactDOM.createRoot(domContainer);
 root.render(React.createElement(MyButton));
+
+
+

@@ -1,0 +1,71 @@
+/* LoginControl.css */
+
+/* 전체 화면 중앙 정렬 및 배경 그라데이션 */
+.app-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    margin: -8px; /* 기본 바디 마진 제거 용도 */
+}
+
+/* 로그인 박스 컨테이너 */
+.login-container {
+    background-color: #ffffff;
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.login-container:hover {
+    transform: translateY(-5px);
+}
+
+/* 인사말 텍스트 */
+.greeting-text {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #2d3748;
+    margin-bottom: 30px;
+    letter-spacing: -0.5px;
+}
+
+/* 버튼 공통 스타일 */
+.btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* 로그인 버튼 (보라/파랑 그라데이션) */
+.btn-login {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(118, 75, 162, 0.3);
+}
+
+.btn-login:hover {
+    box-shadow: 0 8px 25px rgba(118, 75, 162, 0.5);
+    transform: translateY(-2px);
+}
+
+/* 로그아웃 버튼 (빨강/주황 그라데이션) */
+.btn-logout {
+    background: linear-gradient(135deg, #ff6a00 0%, #ee0979 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(238, 9, 121, 0.3);
+}
+
+.btn-logout:hover {
+    box-shadow: 0 8px 25px rgba(238, 9, 121, 0.5);
+    transform: translateY(-2px);
+}
