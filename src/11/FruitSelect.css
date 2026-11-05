@@ -1,0 +1,99 @@
+/* FruitSelect.css */
+
+/* 전체 배경 및 중앙 정렬 */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f3f4f6; /* 부드러운 회색 배경 */
+    font-family: 'Pretendard', -apple-system, sans-serif;
+}
+
+/* 하얀색 입력 폼 카드 */
+.fruit-form {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+}
+
+/* 폼 제목 */
+.form-title {
+    margin: 0 0 30px 0;
+    font-size: 1.8rem;
+    color: #1f2937;
+    font-weight: 800;
+}
+
+/* 라벨 텍스트 */
+.form-label {
+    display: block;
+    font-size: 1.05rem;
+    color: #4b5563;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+/* 셀렉트 박스 꾸미기 */
+.select-wrapper {
+    position: relative;
+    margin-top: 12px;
+}
+
+.fruit-select {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 1rem;
+    color: #374151;
+    background-color: #f9fafb;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    /* 기본 화살표 숨기고 예쁜 화살표(SVG)로 교체 */
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.2em;
+}
+
+/* 셀렉트 박스 클릭(포커스) 시 효과 */
+.fruit-select:focus {
+    border-color: #6366f1; /* 산뜻한 인디고 색상 */
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+    background-color: #ffffff;
+}
+
+/* 제출 버튼 */
+.submit-button {
+    width: 100%;
+    padding: 16px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 15px;
+}
+
+/* 버튼 마우스 호버 효과 */
+.submit-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+}
+
+/* 버튼 클릭할 때 눌리는 효과 */
+.submit-button:active {
+    transform: translateY(0);
+}

@@ -1,0 +1,117 @@
+/* Reservation.css */
+
+/* 전체 화면 배경 */
+.reservation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+    font-family: 'Pretendard', -apple-system, sans-serif;
+}
+
+/* 하얀색 예약 폼 카드 */
+.reservation-card {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* 폼 제목 */
+.card-title {
+    margin: 0 0 10px 0;
+    font-size: 1.6rem;
+    color: #1e293b;
+    font-weight: 800;
+    text-align: center;
+}
+
+/* 입력 그룹 공통 */
+.input-group {
+    background-color: #f8fafc;
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    transition: border-color 0.3s ease;
+}
+
+.input-group:hover {
+    border-color: #cbd5e1;
+}
+
+/* 라벨 텍스트 */
+.label-text {
+    font-size: 1rem;
+    color: #475569;
+    font-weight: 600;
+}
+
+/* 조식 체크박스 스타일링 (토글 스위치 형태) */
+.checkbox-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.toggle-checkbox {
+    width: 24px;
+    height: 24px;
+    accent-color: #6366f1; /* 체크박스 색상을 세련된 인디고색으로 변경 */
+    cursor: pointer;
+}
+
+/* 방문자 수 입력 폼 */
+.number-label {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.number-input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 1.1rem;
+    color: #0f172a;
+    background-color: #ffffff;
+    border: 2px solid #cbd5e1;
+    border-radius: 12px;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.number-input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+/* 제출 버튼 */
+.submit-btn {
+    margin-top: 10px;
+    padding: 18px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(to right, #6366f1, #a855f7);
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.25);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(99, 102, 241, 0.4);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
