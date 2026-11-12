@@ -1,0 +1,81 @@
+/* DistanceConverter.module.css */
+
+.converterContainer {
+    /* 다크한 배경색과 입체감을 주는 그림자 */
+    background: linear-gradient(145deg, #1e1e2f, #252538);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 10px 10px 20px #151522, -10px -10px 20px #31314e;
+    max-width: 550px;
+    margin: 60px auto;
+    font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+    color: #e0e0e0;
+}
+
+.converterContainer h2 {
+    text-align: center;
+    color: #00ffcc; /* 네온 민트 색상 */
+    margin-top: 0;
+    margin-bottom: 35px;
+    font-size: 26px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(0, 255, 204, 0.4);
+}
+
+.inputGroup {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 35px;
+}
+
+.inputField {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.inputField legend {
+    font-size: 15px;
+    font-weight: 600;
+    color: #b3b3cc;
+    padding: 0;
+}
+
+.inputField input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    background-color: #2a2a40;
+    color: #ffffff;
+    border: 2px solid #3f3f5a;
+    border-radius: 8px;
+    outline: none;
+    /* 부드러운 애니메이션 효과 */
+    transition: all 0.3s ease;
+}
+
+/* 입력창을 클릭(포커스) 했을 때의 네온 글로우 효과 */
+.inputField input:focus {
+    border-color: #b026ff;
+    box-shadow: 0 0 15px rgba(176, 38, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.inputField input::placeholder {
+    color: #6c6c86;
+}
+
+.resultBox {
+    /* 민트에서 보라색으로 이어지는 그라데이션 */
+    background: linear-gradient(90deg, #00ffcc, #b026ff);
+    color: #111111;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(176, 38, 255, 0.3);
+    word-break: keep-all;
+}
