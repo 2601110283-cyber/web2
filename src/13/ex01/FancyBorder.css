@@ -1,0 +1,39 @@
+.FancyBorder {
+    padding: 16px 20px;
+    border: 6px solid #3b82f6;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+}
+
+.FancyBorder-blue {
+    border-color: #2563eb;
+    background-color: #eff6ff;
+}
+
+.FancyBorder-red {
+    border-color: #dc2626;
+    background-color: #fef2f2;
+}
+
+.FancyBorder-green {
+    border-color: #16a34a;
+    background-color: #f0fdf4;
+}
+
+.Dialog-container {
+    max-width: 520px;
+    margin: 24px auto;
+}
+
+.Dialog-title {
+    margin: 0 0 8px 0;
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.Dialog-message {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}

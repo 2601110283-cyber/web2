@@ -33,14 +33,18 @@ import Notification from "./06/NotificationList";
 //import FruitSelect from "./11/FruitSelect";
 //import Reservation from "./11/Reservation";
 //import Calculator from "./12/ex4/Calculator";
-import DistanceConverter from "./12/ex5/DistanceConverter";
+//import DistanceConverter from "./12/ex5/DistanceConverter";
+//import WelcomeDialog from "./13/ex02/WelcomeDialog";
+import ProfileCard from "./13/ex04/ProfileCard";
+
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 setInterval(() => {
         root.render(
             <React.StrictMode>
-                <DistanceConverter/>
+                <ProfileCard/>
             </React.StrictMode>
         );
     },1000

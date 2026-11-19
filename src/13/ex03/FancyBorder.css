@@ -1,0 +1,72 @@
+/* Dialog 전체 카드 영역 */
+.FancyBorder {
+    max-width: 520px;
+    margin: 24px auto;
+    padding: 22px 26px;
+    border: 6px solid;
+    border-radius: 12px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* 파란색 테두리 테마 */
+.FancyBorder-blue {
+    border-color: #2563eb;
+    background-color: #eff6ff;
+}
+
+/* Dialog 제목 */
+.Dialog-title {
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e3a8a;
+}
+
+/* Dialog 안내 메시지 */
+.Dialog-message {
+    margin: 0 0 18px 0;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #334155;
+}
+
+/* SignUpDialog 닉네임 입력창 */
+.FancyBorder input {
+    padding: 9px 12px;
+    margin-right: 8px;
+    border: 1.5px solid #94a3b8;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #ffffff;
+    color: #0f172a;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.FancyBorder input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
+}
+
+/* SignUpDialog 가입하기 버튼 */
+.FancyBorder button {
+    padding: 9px 18px;
+    border: none;
+    border-radius: 6px;
+    background-color: #2563eb;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.FancyBorder button:hover {
+    background-color: #1d4ed8;
+}
+
+.FancyBorder button:active {
+    transform: scale(0.98);
+}
