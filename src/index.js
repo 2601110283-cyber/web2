@@ -35,16 +35,16 @@ import Notification from "./06/NotificationList";
 //import Calculator from "./12/ex4/Calculator";
 //import DistanceConverter from "./12/ex5/DistanceConverter";
 //import WelcomeDialog from "./13/ex02/WelcomeDialog";
-import ProfileCard from "./13/ex04/ProfileCard";
-
-
+//import ProfileCard from "./13/ex04/ProfileCard";
+//import MainContent from "./14/MainContent";
+import DarkOrLight from "./14/DarkOr.Light";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 setInterval(() => {
         root.render(
             <React.StrictMode>
-                <ProfileCard/>
+                <DarkOrLight/>
             </React.StrictMode>
         );
     },1000

@@ -1,0 +1,569 @@
+/* 제목용 글꼴 (인터넷이 안 되면 기기 기본 명조체로 표시됨) */
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap");
+
+/* ==================================================================
+   1. 기존 index.css / App.css 영향 차단
+   ------------------------------------------------------------------
+   프로젝트에 원래 있던 전역 스타일(div, header, button 등에 걸린 폭,
+   테두리, 여백)이 이 페이지에 섞여 들어오지 않게 막는 부분.
+================================================================== */
+
+/* (1) 이 페이지를 감싸고 있는 모든 바깥 요소의 폭 제한 해제 */
+:has(.mono-wrapper) {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+    float: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    text-align: left !important;
+}
+
+/* (:has를 모르는 구형 브라우저용 — 같은 내용) */
+html,
+body,
+#root,
+.App {
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+    box-shadow: none !important;
+    border: none !important;
+    text-align: left !important;
+}
+
+/* (2) 페이지 바깥(스크롤 끝, 스크롤바)까지 테마 색을 맞춤 */
+html:has(.mono-wrapper.light),
+html:has(.mono-wrapper.light) body {
+    background-color: #ffffff !important;
+    color-scheme: light;
+}
+
+html:has(.mono-wrapper.dark),
+html:has(.mono-wrapper.dark) body {
+    background-color: #14161a !important;
+    color-scheme: dark;
+}
+
+html[data-theme="light"],
+html[data-theme="light"] body {
+    background-color: #ffffff !important;
+    color-scheme: light;
+}
+
+html[data-theme="dark"],
+html[data-theme="dark"] body {
+    background-color: #14161a !important;
+    color-scheme: dark;
+}
+
+/* (3) 페이지 안쪽 모든 요소: 전역 스타일을 버리고 브라우저 기본값으로 되돌림
+       (아이콘 svg는 제외) */
+.mono-wrapper,
+.mono-wrapper :where(*:not(svg, svg *)) {
+    all: revert;
+    box-sizing: border-box;
+}
+
+/* (4) 브라우저 기본 여백 정리 */
+.mono-wrapper h1,
+.mono-wrapper h2,
+.mono-wrapper p,
+.mono-wrapper dl,
+.mono-wrapper dt,
+.mono-wrapper dd {
+    margin: 0;
+    padding: 0;
+}
+
+.mono-wrapper button {
+    margin: 0;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.mono-wrapper a:focus-visible,
+.mono-wrapper button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* ==================================================================
+   2. 테마 색상 — 여기 값만 바꾸면 전체 색이 바뀜
+================================================================== */
+/* 라이트 모드 */
+.mono-wrapper.light {
+    --bg: #ffffff;
+    --bg-sub: #f2f3f1;
+    --line: #e2e3e0;
+    --ink: #1c1d1f;
+    --ink-sub: #55585d;
+    --ink-muted: #72757a;
+    --accent: #2c4f95; /* 쪽빛 */
+    --photo-brightness: 1;
+}
+
+/* 다크 모드 */
+.mono-wrapper.dark {
+    --bg: #14161a;
+    --bg-sub: #1e2126;
+    --line: #2e323a;
+    --ink: #eceef1;
+    --ink-sub: #b1b6bf;
+    --ink-muted: #8a909a;
+    --accent: #a3bcf0;
+    --photo-brightness: 0.88;
+}
+
+.mono-wrapper {
+    --serif: "Gowun Batang", "Nanum Myeongjo", "Batang", Georgia, serif;
+    --side: 2.5rem; /* 좌우 여백 */
+
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: left;
+    word-break: keep-all;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ==================================================================
+   3. 헤더
+================================================================== */
+.mono-wrapper .mono-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: var(--bg);
+    border-bottom: 1px solid var(--line);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.mono-wrapper .mono-header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.1rem var(--side);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.mono-wrapper .mono-logo {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.mono-wrapper .mono-header-right {
+    display: flex;
+    align-items: center;
+    gap: 2.25rem;
+}
+
+.mono-wrapper .mono-nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.mono-wrapper .mono-nav a {
+    color: var(--ink-sub);
+    font-size: 0.9rem;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
+
+.mono-wrapper .mono-nav a:hover,
+.mono-wrapper .mono-nav a.active {
+    color: var(--ink);
+}
+
+.mono-wrapper .mono-nav a.active {
+    font-weight: 700;
+}
+
+/* 다크 모드 스위치 */
+.mono-wrapper .mono-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0;
+    border: none;
+    background: none;
+    color: var(--ink-sub);
+    font-size: 0.82rem;
+    white-space: nowrap;
+}
+
+.mono-wrapper .mono-switch-track {
+    position: relative;
+    display: block;
+    width: 46px;
+    height: 26px;
+    border-radius: 999px;
+    background-color: var(--line);
+    transition: background-color 0.3s ease;
+}
+
+.mono-wrapper .mono-switch.on .mono-switch-track {
+    background-color: var(--accent);
+}
+
+.mono-wrapper .mono-switch-thumb {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #1c1d1f;
+    transition: transform 0.3s ease;
+}
+
+/* 켜지면 동그라미가 오른쪽으로 이동 */
+.mono-wrapper .mono-switch.on .mono-switch-thumb {
+    transform: translateX(20px);
+}
+
+/* ==================================================================
+   4. 소개 영역
+================================================================== */
+.mono-wrapper .mono-main {
+    display: block;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--side) 6rem;
+}
+
+.mono-wrapper .mono-hero {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    align-items: end;
+    gap: 3rem;
+    padding: 5.5rem 0 4rem;
+}
+
+.mono-wrapper .mono-title {
+    font-family: var(--serif);
+    font-size: clamp(2.1rem, 5.2vw, 4rem);
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+}
+
+.mono-wrapper .mono-intro p {
+    max-width: 26rem;
+    font-size: 0.98rem;
+    color: var(--ink-sub);
+}
+
+.mono-wrapper .mono-facts {
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--line);
+}
+
+.mono-wrapper .mono-facts div {
+    display: flex;
+    gap: 1.5rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.88rem;
+}
+
+.mono-wrapper .mono-facts dt {
+    width: 3rem;
+    color: var(--ink-muted);
+}
+
+.mono-wrapper .mono-facts dd {
+    color: var(--ink);
+}
+
+/* ==================================================================
+   5. 요일 필터
+================================================================== */
+.mono-wrapper .mono-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 2.25rem;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 3rem;
+}
+
+.mono-wrapper .mono-tabs button {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    padding: 0.9rem 0;
+    margin-bottom: -1px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    background: none;
+    color: var(--ink-muted);
+    font-size: 0.95rem;
+    white-space: nowrap;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.mono-wrapper .mono-tabs button:hover {
+    color: var(--ink);
+}
+
+.mono-wrapper .mono-tabs button.active {
+    color: var(--ink);
+    font-weight: 700;
+    border-bottom-color: var(--accent);
+}
+
+.mono-wrapper .mono-tab-count {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--ink-muted);
+}
+
+/* ==================================================================
+   6. 클래스 카드
+================================================================== */
+.mono-wrapper .mono-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 3.5rem 1.75rem;
+}
+
+.mono-wrapper .mono-card {
+    display: block;
+    min-width: 0;
+}
+
+/* 첫 번째 카드: 두 칸을 차지하고, 사진 옆에 글을 크게 배치 */
+.mono-wrapper .mono-card.featured {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem;
+    align-self: start; /* 카드 높이를 사진 높이에 맞춤 */
+    align-items: end; /* 글은 사진 아래쪽 선에 맞춤 */
+}
+
+.mono-wrapper .mono-photo {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background-color: var(--bg-sub);
+    transition: background-color 0.3s ease;
+}
+
+/* 사진을 못 불러왔을 때 보이는 글자 */
+.mono-wrapper .mono-photo-fallback {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-size: 2rem;
+    color: var(--ink-muted);
+}
+
+.mono-wrapper .mono-photo img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(var(--photo-brightness)); /* 다크 모드에서 사진이 너무 튀지 않게 */
+    transition: filter 0.3s ease;
+}
+
+.mono-wrapper .mono-card-body {
+    padding-top: 1.1rem;
+}
+
+.mono-wrapper .mono-card.featured .mono-card-body {
+    padding: 0 0 0.25rem;
+}
+
+.mono-wrapper .mono-soonest {
+    margin-bottom: 1.5rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.mono-wrapper .mono-when {
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+}
+
+.mono-wrapper .mono-card-title {
+    margin: 0.3rem 0 0.5rem;
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--ink);
+}
+
+.mono-wrapper .mono-card.featured .mono-card-title {
+    margin: 0.5rem 0 0.9rem;
+    font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+}
+
+.mono-wrapper .mono-desc {
+    font-size: 0.9rem;
+    color: var(--ink-sub);
+}
+
+.mono-wrapper .mono-card.featured .mono-desc {
+    font-size: 1rem;
+}
+
+.mono-wrapper .mono-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--ink);
+}
+
+.mono-wrapper .mono-card.featured .mono-bottom {
+    margin-top: 1.75rem;
+}
+
+.mono-wrapper .mono-duration {
+    margin-left: 0.6rem;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--ink-muted);
+}
+
+.mono-wrapper .mono-seats {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--ink-sub);
+    white-space: nowrap;
+}
+
+/* 2자리 이하로 남았을 때 */
+.mono-wrapper .mono-seats.few {
+    font-weight: 700;
+    color: var(--accent);
+}
+
+/* 마감된 클래스: 사진을 흑백으로 */
+.mono-wrapper .mono-card.closed .mono-photo img {
+    filter: grayscale(1) brightness(var(--photo-brightness));
+}
+
+.mono-wrapper .mono-card.closed .mono-card-title,
+.mono-wrapper .mono-card.closed .mono-bottom {
+    color: var(--ink-muted);
+}
+
+/* ==================================================================
+   7. 푸터
+================================================================== */
+.mono-wrapper .mono-footer {
+    display: block;
+    border-top: 1px solid var(--line);
+}
+
+.mono-wrapper .mono-footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.75rem var(--side);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem 2rem;
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+}
+
+/* ==================================================================
+   8. 반응형
+================================================================== */
+@media (max-width: 960px) {
+    .mono-wrapper {
+        --side: 1.25rem;
+    }
+
+    .mono-wrapper .mono-nav {
+        display: none;
+    }
+
+    .mono-wrapper .mono-hero {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 3.25rem 0 2.75rem;
+    }
+
+    .mono-wrapper .mono-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2.75rem 1.25rem;
+    }
+
+    .mono-wrapper .mono-card.featured {
+        gap: 1.25rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .mono-wrapper .mono-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mono-wrapper .mono-card.featured {
+        grid-column: auto;
+        display: block;
+    }
+
+    .mono-wrapper .mono-card.featured .mono-card-body {
+        padding-top: 1.1rem;
+    }
+
+    .mono-wrapper .mono-soonest {
+        margin-bottom: 0.6rem;
+    }
+
+    .mono-wrapper .mono-tabs {
+        gap: 0 1.5rem;
+        margin-bottom: 2.25rem;
+    }
+}
+
+/* 움직임 줄이기 설정을 켠 사용자는 전환 효과 생략 */
+@media (prefers-reduced-motion: reduce) {
+    .mono-wrapper,
+    .mono-wrapper * {
+        transition: none !important;
+    }
+}
